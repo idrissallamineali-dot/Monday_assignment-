@@ -1,40 +1,79 @@
-# Monday Assignment - Office Management
+# Web Technology Lab Assignment — Clinic Office Management
 
-Full stack application implementing Office Management using **Spring Boot** and **React**.
-
-## Features Implemented
-- **Display Available Offices**: Dynamic table showing all office records (Name, Office Number).
-- **Search Feature**: Search by office name or office number.
-- **Action Column**:
-  - **Delete**: Remove an office record and update the table in real-time.
-  - **Update**: Button placed (placeholder for upcoming class).
+**Course:** Web Technology  
+**Assignment:** Office Management (Backend & Frontend Integration)  
+**Student Name:** Idriss Allamine Ali  
+**Student ID:** 27836  
 
 ---
 
-## Project Structure
+## 📌 Project Overview
 
-```
-Monday_assignment-/
-├── backend/       # Spring Boot Application (Port 8082)
-└── frontend/      # React + Vite Application (Port 5173)
-```
+This project is a full-stack web application designed to manage clinic offices. It connects a **Spring Boot** REST API backend with a **React + Vite** frontend to perform CRUD operations, data searching, and real-time UI updates.
+
+### Assignment Requirements:
+* [x] **Display Available Offices:** Dynamic table listing all offices (Name and Office Number).
+* [x] **Search Feature:** Filter offices in real-time by either office name or office number.
+* [x] **Action Column (Delete):** Remove an office record with immediate UI update upon deletion.
+* [x] **Action Column (Update):** Action button added as a placeholder (per instructions, to be implemented in the next class).
 
 ---
 
-## How to Run
+## 🛠️ Tech Stack
 
-### 1. Backend (Spring Boot)
-Ensure PostgreSQL is running and database `clinic` exists.
+* **Backend:**
+  * Java 17
+  * Spring Boot 4.x
+  * Spring Data JPA / Hibernate
+  * PostgreSQL
+* **Frontend:**
+  * React 18 (Functional Components & Hooks)
+  * Vite
+  * Axios (HTTP Client)
+  * React-Toastify (User feedback & notifications)
+
+---
+
+## 🔌 REST API Endpoints
+
+All backend endpoints are prefixed with `/api/office`:
+
+| HTTP Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/office/all` | Retrieves all registered offices |
+| `GET` | `/api/office/search?keyword={query}` | Searches offices matching name or number |
+| `POST` | `/api/office/save` | Creates and saves a new office |
+| `DELETE` | `/api/office/delete/{id}` | Deletes an office by UUID |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+* **Java 17** or higher
+* **Node.js** (v18+) & **npm**
+* **PostgreSQL** running on port `5432` with database `clinic`
+
+### 2. Backend Setup (Spring Boot)
+Navigate to the `backend` folder and run the Spring Boot application:
+
 ```bash
 cd backend
 ./mvnw spring-boot:run
 ```
-The server will start on `http://localhost:8082`.
+> The backend server will start on **`http://localhost:8082`**.
 
-### 2. Frontend (React)
+### 3. Frontend Setup (React)
+Open a new terminal, navigate to the `frontend` folder, install dependencies, and start the development server:
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Open your browser at `http://localhost:5173`.
+> Open your browser and navigate to **`http://localhost:5173`**.
+
+---
+
+## 📝 Notes
+* As specified in the assignment instructions, only **Search** and **Delete** actions are active. The **Update** button is currently disabled and prepared for the upcoming class.
